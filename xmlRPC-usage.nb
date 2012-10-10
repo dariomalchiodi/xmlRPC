@@ -1,0 +1,326 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      9183,        316]
+NotebookOptionsPosition[      7098,        242]
+NotebookOutlinePosition[      7972,        273]
+CellTagsIndexPosition[      7848,        267]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Remotely executing code within ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " through the xmlRPC Package"
+}], "Title",
+ CellChangeTimes->{{3.5588771079919167`*^9, 3.558877108047861*^9}}],
+
+Cell["\<\
+Dario Malchiodi
+Universit\[AGrave] degli Studi di Milano
+Dipartimento di Informatica
+Via Comelico 39/41 2135 Milano ITALY
+malchiodi@di.unimi.it\
+\>", "Author",
+ CellChangeTimes->{{3.558877016686624*^9, 3.558877049187636*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["The XML-RPC protocol", "Section"],
+
+Cell[TextData[{
+ "The XML-RPC protocol allows to send over the internet the XML encodings of \
+method invocations through an HTTPD connection and receiving back the \
+corresponding return value (refer to ",
+ StyleBox["http://www.xmlrpc.com",
+  FontFamily->"Courier",
+  FontSize->11],
+ " for a thorough exposition). The xmlRPC package handles all the \
+communication and protocol management, so that the remote invocation is \
+transparent to the user who simply invokes a function."
+}], "Text",
+ CellChangeTimes->{{3.5588770710272617`*^9, 3.558877075954927*^9}, {
+  3.5588771145024433`*^9, 3.558877121310012*^9}, {3.558877169116877*^9, 
+  3.5588771707173433`*^9}, {3.558877232054385*^9, 3.558877238990223*^9}, {
+  3.55887742078821*^9, 3.55887746145759*^9}, {3.558877500848452*^9, 
+  3.5588775014012127`*^9}, {3.558877535596088*^9, 3.558877555256208*^9}, {
+  3.558877618438459*^9, 3.558877621989797*^9}, {3.558877659535413*^9, 
+  3.558877698819859*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Obtaining and installing the package", "Section"],
+
+Cell[TextData[{
+ "The software is available on github at the address ",
+ StyleBox["http://github.com/dariomalchiodi/xmlRPC",
+  FontFamily->"Courier",
+  FontSize->11],
+ ", in a repository containing this documentation notebook and the  package \
+file ",
+ StyleBox["xmlRPC.m",
+  FontFamily->"Courier",
+  FontSize->11],
+ ". The latter should be saved in a directory listed in the ",
+ StyleBox["$Path",
+  FontFamily->"Courier",
+  FontSize->11],
+ " variable (a suggested choice is the ",
+ StyleBox["Applications",
+  FontSlant->"Italic"],
+ " directory in the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " system- or user-based root directory)."
+}], "Text",
+ CellChangeTimes->{{3.558877735334201*^9, 3.5588777968978233`*^9}, {
+  3.558877830437454*^9, 3.558877839466344*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Using the package", "Section"],
+
+Cell[TextData[{
+ "The package loads as usual in ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ":"
+}], "Text"],
+
+Cell[BoxData[
+ RowBox[{"<<", "xmlRPC`"}]], "Input",
+ CellChangeTimes->{{3.558878773615087*^9, 3.558878773683827*^9}}],
+
+Cell[TextData[{
+ "The functions ",
+ StyleBox["xmlRPCInit", "Input"],
+ " and ",
+ StyleBox["xmlRpc", "Input"],
+ " are provided. The first allows to set address and port of an XML-RPC \
+server:"
+}], "Text",
+ CellChangeTimes->{
+  3.558877875400391*^9, {3.558878802948647*^9, 3.558878803019987*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "xmlRPCInit"}]], "Input",
+ CellChangeTimes->{{3.55887878114948*^9, 3.5588787822141533`*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"xmlRPCInit[address,port] sets the address and port of the \
+XML-RPC server to be called\"\>", "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.5588787841665173`*^9},
+ CellTags->"Info3558885984-9651005"]
+}, Open  ]],
+
+Cell["\<\
+Note: the following cells are provided as mere examples and will not work if \
+executed. Use existing XML-RPC servers for experimentation purposes.\
+\>", "Text"],
+
+Cell[TextData[{
+ "Suppose an XML-RPC server is available at the address ",
+ StyleBox["xmlrpc.icecreams.com",
+  FontFamily->"Courier",
+  FontSize->11],
+ ", port 3300. The corresponding call to ",
+ StyleBox["xmlRPCInit", "Input"],
+ " is the following "
+}], "Text",
+ CellChangeTimes->{{3.5588788574858418`*^9, 3.5588788599497232`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"xmlRPCInit", "[", 
+  RowBox[{"\"\<xmlrpc.icecreams.com\>\"", ",", " ", "3300"}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.558878882998391*^9, 3.558878883958373*^9}}],
+
+Cell[TextData[{
+ "Once ",
+ StyleBox["xmlRpcInit", "InlineInput"],
+ " has been colled, ",
+ StyleBox["xmlRpc", "InlineInput"],
+ " remotely executes a given procedure "
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "xmlRPC"}]], "Input",
+ CellChangeTimes->{{3.5588788871013937`*^9, 3.55887888799763*^9}}],
+
+Cell[BoxData[
+ StyleBox["\<\"xmlRPC[methodName,params] executes the RPC to the method \
+methodName using the arguments contained in the list params\"\>", 
+  "MSG"]], "Print", "PrintUsage",
+ CellChangeTimes->{3.55887888877759*^9},
+ CellTags->"Info3558886088-9651005"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Suppose the above server provides an ",
+ StyleBox["availableIceCreams", "InlineInput",
+  FontSlant->"Italic"],
+ " method, requesting a string argument denoting a flavor and returning the \
+corresponding number of available ice creams. A related call within ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " could be: "
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"xmlRPC", "[", 
+  RowBox[{"\"\<availableIceCreams\>\"", ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"String", ",", "\"\<chocolate\>\""}], "}"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.5588789033278713`*^9, 3.5588789042225637`*^9}}],
+
+Cell[BoxData["\<\"314\"\>"], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Note how each argument needs to be coupled with the corresponding data type, \
+according to the XML-RPC specifications.\
+\>", "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Options", "Section"],
+
+Cell[TextData[{
+ "The above described package behavior corresponds to the default value ",
+ StyleBox["True", "InlineInput"],
+ " of the ",
+ StyleBox["\"verbose\"", "InlineInput"],
+ " option. When this option is set to ",
+ StyleBox["False", "InlineInput"],
+ ", each execution of ",
+ StyleBox["xmlRpc", "InlineInput"],
+ " prints a set of messages containing respectively a reference to the used \
+socket object, the text sent and received through the corresponding HTTP \
+connection, as well as some verbose output. In both cases ",
+ StyleBox["xmlRpc", "InlineInput"],
+ " returns the ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " expression corresponding to the return value of the called procedure."
+}], "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["References", "Section"],
+
+Cell["\<\
+Please send comments to malchiodi@di.unimi.it.\
+\>", "Text",
+ CellChangeTimes->{{3.558878962028067*^9, 3.558878973906481*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->"EditBar",
+WindowSize->{1095, 623},
+WindowMargins->{{7, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.5, 1.5 Inherited],
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
+2010)",
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "AutomatedReport.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info3558885984-9651005"->{
+  Cell[3675, 125, 235, 4, 60, "Print",
+   CellTags->"Info3558885984-9651005"]},
+ "Info3558886088-9651005"->{
+  Cell[4947, 168, 266, 5, 84, "Print",
+   CellTags->"Info3558886088-9651005"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info3558885984-9651005", 7636, 258},
+ {"Info3558886088-9651005", 7745, 261}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 212, 6, 240, "Title"],
+Cell[794, 30, 235, 7, 148, "Author"],
+Cell[CellGroupData[{
+Cell[1054, 41, 39, 0, 99, "Section"],
+Cell[1096, 43, 951, 17, 107, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2084, 65, 55, 0, 99, "Section"],
+Cell[2142, 67, 776, 23, 84, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2955, 95, 36, 0, 99, "Section"],
+Cell[2994, 97, 116, 5, 39, "Text"],
+Cell[3113, 104, 117, 2, 28, "Input"],
+Cell[3233, 108, 294, 9, 39, "Text"],
+Cell[CellGroupData[{
+Cell[3552, 121, 120, 2, 28, "Input"],
+Cell[3675, 125, 235, 4, 60, "Print",
+ CellTags->"Info3558885984-9651005"]
+}, Open  ]],
+Cell[3925, 132, 171, 3, 62, "Text"],
+Cell[4099, 137, 332, 9, 62, "Text"],
+Cell[4434, 148, 189, 4, 28, "Input"],
+Cell[4626, 154, 177, 6, 39, "Text"],
+Cell[CellGroupData[{
+Cell[4828, 164, 116, 2, 28, "Input"],
+Cell[4947, 168, 266, 5, 84, "Print",
+ CellTags->"Info3558886088-9651005"]
+}, Open  ]],
+Cell[5228, 176, 353, 9, 62, "Text"],
+Cell[CellGroupData[{
+Cell[5606, 189, 276, 7, 28, "Input"],
+Cell[5885, 198, 38, 0, 28, "Output"]
+}, Open  ]],
+Cell[5938, 201, 143, 3, 39, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6118, 209, 26, 0, 99, "Section"],
+Cell[6147, 211, 718, 17, 107, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6902, 233, 29, 0, 99, "Section"],
+Cell[6934, 235, 136, 3, 39, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
