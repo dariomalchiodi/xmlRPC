@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      9183,        316]
-NotebookOptionsPosition[      7098,        242]
-NotebookOutlinePosition[      7972,        273]
-CellTagsIndexPosition[      7848,        267]
+NotebookDataLength[     12077,        379]
+NotebookOptionsPosition[      9941,        304]
+NotebookOutlinePosition[     10818,        335]
+CellTagsIndexPosition[     10692,        329]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -36,6 +36,68 @@ Via Comelico 39/41 2135 Milano ITALY
 malchiodi@di.unimi.it\
 \>", "Author",
  CellChangeTimes->{{3.558877016686624*^9, 3.558877049187636*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+      "**", "**", "**", "**", "**", "**", "**", "**", "**", "**", "**", "**", 
+       "**", "**", "**", "**", "**", "**", "**", "**", "**", "**", "**", "**",
+        "**", "**", "**", "**", "**", "**", "**", "**", "**", "**", "**", "**",
+        "**", "**"}], "*", "\n", "      ", "Copyright", " ", 
+      RowBox[{"(", "C", ")"}], " ", "2010", " ", "Dario", " ", "Malchiodi"}], 
+     "<", 
+     RowBox[{
+      RowBox[{"malchiodi", "@", "di"}], ".", "unimi", ".", "it"}], ">", "\n", 
+     "\n", 
+     RowBox[{"This", " ", "file", " ", "is", " ", "part", " ", "of", " ", 
+      RowBox[{"xmlRPC", ".", "xmlRPC"}], " ", "is", " ", "free", " ", 
+      "software"}]}], ";", 
+    RowBox[{"you", " ", "can", " ", "redistribute", " ", "it", "\n", 
+     RowBox[{"and", "/", "or"}], " ", "modify", " ", "it", " ", "under", " ", 
+     "the", " ", "terms", " ", "of", " ", "the", " ", "GNU", " ", "Lesser", 
+     " ", "General", " ", "Public", " ", "License", " ", "as", "\n", 
+     "published", " ", "by", " ", "the", " ", "Free", " ", "Software", " ", 
+     "Foundation"}], ";", 
+    RowBox[{
+    "either", " ", "version", " ", "2.1", " ", "of", " ", "the", " ", 
+     "License"}]}], ",", "\n", 
+   RowBox[{"or", " ", 
+    RowBox[{"(", 
+     RowBox[{"at", " ", "your", " ", "option"}], ")"}], " ", "any", " ", 
+    "later", " ", 
+    RowBox[{"version", ".", "xmlRPC"}], " ", "is", " ", "distributed", " ", 
+    "in", " ", "the", " ", "hope", " ", "that", "\n", "it", " ", "will", " ", 
+    "be", " ", "useful"}], ",", 
+   RowBox[{
+    RowBox[{"but", " ", "without", " ", "any", " ", "warranty"}], ";", " ", 
+    RowBox[{
+    "without", " ", "even", " ", "the", " ", "implied", " ", "warranty", "\n",
+      "of", " ", "merchantability", " ", "or", " ", "fitness", " ", "for", 
+     " ", "a", " ", "particular", " ", 
+     RowBox[{"purpose", ".", "See"}], " ", "the", " ", "GNU", " ", "Lesser", 
+     "\n", "General", " ", "Public", " ", "License", " ", "for", " ", "more", 
+     " ", 
+     RowBox[{"details", ".", " ", "You"}], " ", "should", " ", "have", " ", 
+     "received", " ", "a", " ", "copy", " ", "of", "\n", "the", " ", "GNU", 
+     " ", "Lesser", " ", "General", " ", "Public", " ", "License", " ", 
+     "along", " ", "with", " ", "xmlRPC"}], ";", " ", 
+    RowBox[{"if", " ", "not"}]}], ",", " ", 
+   RowBox[{
+    RowBox[{"see", "\n", "<", 
+     RowBox[{"http", ":"}]}], "//", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"www", ".", "gnu", ".", "org"}], "/", "licenses"}], "/"}], ">",
+      "."}]}]}], "\n", "\n", 
+  "******************************************************************************)"}\
+]], "Code",
+ CellChangeTimes->{{3.5666636506081676`*^9, 3.566663650611328*^9}, {
+  3.566663688661222*^9, 3.566663749553742*^9}}],
 
 Cell[CellGroupData[{
 
@@ -257,17 +319,17 @@ StyleDefinitions->FrontEnd`FileName[{"Report"}, "AutomatedReport.nb",
 (*CellTagsOutline
 CellTagsIndex->{
  "Info3558885984-9651005"->{
-  Cell[3675, 125, 235, 4, 60, "Print",
+  Cell[6518, 187, 235, 4, 90, "Print",
    CellTags->"Info3558885984-9651005"]},
  "Info3558886088-9651005"->{
-  Cell[4947, 168, 266, 5, 84, "Print",
+  Cell[7790, 230, 266, 5, 126, "Print",
    CellTags->"Info3558886088-9651005"]}
  }
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Info3558885984-9651005", 7636, 258},
- {"Info3558886088-9651005", 7745, 261}
+ {"Info3558885984-9651005", 10479, 320},
+ {"Info3558886088-9651005", 10588, 323}
  }
 *)
 (*NotebookFileOutline
@@ -275,47 +337,48 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[579, 22, 212, 6, 240, "Title"],
 Cell[794, 30, 235, 7, 148, "Author"],
+Cell[1032, 39, 2840, 60, 364, "Code"],
 Cell[CellGroupData[{
-Cell[1054, 41, 39, 0, 99, "Section"],
-Cell[1096, 43, 951, 17, 107, "Text"]
+Cell[3897, 103, 39, 0, 99, "Section"],
+Cell[3939, 105, 951, 17, 107, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2084, 65, 55, 0, 99, "Section"],
-Cell[2142, 67, 776, 23, 84, "Text"]
+Cell[4927, 127, 55, 0, 99, "Section"],
+Cell[4985, 129, 776, 23, 84, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2955, 95, 36, 0, 99, "Section"],
-Cell[2994, 97, 116, 5, 39, "Text"],
-Cell[3113, 104, 117, 2, 28, "Input"],
-Cell[3233, 108, 294, 9, 39, "Text"],
+Cell[5798, 157, 36, 0, 99, "Section"],
+Cell[5837, 159, 116, 5, 39, "Text"],
+Cell[5956, 166, 117, 2, 28, "Input"],
+Cell[6076, 170, 294, 9, 39, "Text"],
 Cell[CellGroupData[{
-Cell[3552, 121, 120, 2, 28, "Input"],
-Cell[3675, 125, 235, 4, 60, "Print",
+Cell[6395, 183, 120, 2, 28, "Input"],
+Cell[6518, 187, 235, 4, 90, "Print",
  CellTags->"Info3558885984-9651005"]
 }, Open  ]],
-Cell[3925, 132, 171, 3, 62, "Text"],
-Cell[4099, 137, 332, 9, 62, "Text"],
-Cell[4434, 148, 189, 4, 28, "Input"],
-Cell[4626, 154, 177, 6, 39, "Text"],
+Cell[6768, 194, 171, 3, 93, "Text"],
+Cell[6942, 199, 332, 9, 93, "Text"],
+Cell[7277, 210, 189, 4, 42, "Input"],
+Cell[7469, 216, 177, 6, 58, "Text"],
 Cell[CellGroupData[{
-Cell[4828, 164, 116, 2, 28, "Input"],
-Cell[4947, 168, 266, 5, 84, "Print",
+Cell[7671, 226, 116, 2, 42, "Input"],
+Cell[7790, 230, 266, 5, 126, "Print",
  CellTags->"Info3558886088-9651005"]
 }, Open  ]],
-Cell[5228, 176, 353, 9, 62, "Text"],
+Cell[8071, 238, 353, 9, 93, "Text"],
 Cell[CellGroupData[{
-Cell[5606, 189, 276, 7, 28, "Input"],
-Cell[5885, 198, 38, 0, 28, "Output"]
+Cell[8449, 251, 276, 7, 42, "Input"],
+Cell[8728, 260, 38, 0, 42, "Output"]
 }, Open  ]],
-Cell[5938, 201, 143, 3, 39, "Text"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[6118, 209, 26, 0, 99, "Section"],
-Cell[6147, 211, 718, 17, 107, "Text"]
+Cell[8781, 263, 143, 3, 58, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6902, 233, 29, 0, 99, "Section"],
-Cell[6934, 235, 136, 3, 39, "Text"]
+Cell[8961, 271, 26, 0, 148, "Section"],
+Cell[8990, 273, 718, 17, 160, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9745, 295, 29, 0, 148, "Section"],
+Cell[9777, 297, 136, 3, 58, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
@@ -323,4 +386,3 @@ Cell[6934, 235, 136, 3, 39, "Text"]
 *)
 
 (* End of internal cache information *)
-
